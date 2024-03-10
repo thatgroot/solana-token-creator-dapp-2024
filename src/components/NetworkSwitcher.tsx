@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { BsNintendoSwitch } from "react-icons/bs";
 //INTERNAL IMPORT
 import { useNetworkConfiguration } from "../contexts/NetworkConfigurationProvider";
-import NetworkSwitcher from "./SVG/NetworkSwitcherSVG";
+import NetworkSwitcherSVG from "./SVG/NetworkSwitcherSVG";
 
 const NetworkSwitcher: FC = () => {
   const { networkConfiguration, setNetworkConfiguration } =
