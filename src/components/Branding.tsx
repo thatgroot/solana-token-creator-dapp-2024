@@ -5,7 +5,7 @@ const Branding: FC = ({ image, title, message }) => {
     <div className="ps-4 hidden py-4 lg:block">
       <div className="relative mt-3 h-full w-full overflow-hidden rounded-xl">
         <img
-          src={`assets/images/ai/auth-img.jpg`}
+          src={`assets/images/ai/${image}.jpg`}
           alt=""
           className="h-full w-full -scale-x-100 transform"
         />
