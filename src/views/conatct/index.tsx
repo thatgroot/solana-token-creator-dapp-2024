@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { AiOutlineClose } from "react-icons/ai";
 import { SiMinutemailer } from "react-icons/si";
@@ -6,7 +6,10 @@ import { notify } from "../../utils/notifications";
 
 // INTERNAL IMPORT
 import Branding from "../../components/Branding";
-export const ContactView: FC = ({ setOpenContract }) => {
+interface ContactViewProps {
+  setOpenContract: Dispatch<SetStateAction<boolean>>;
+}
+export const ContactView: FC<ContactViewProps> = ({ setOpenContract }) => {
   //FORM
   const [state, handleSubmit] = useForm("mwkgqpnv");
   if (state.succeeded) {

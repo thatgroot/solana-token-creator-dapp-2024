@@ -1,10 +1,18 @@
-import React, { FC } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { GiRegeneration } from "react-icons/gi";
 import { FaJoget } from "react-icons/fa6";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
-export const FeatureView: FC = ({
+
+interface FeatureViewProps {
+  setOpenAirdrop: Dispatch<SetStateAction<boolean>>;
+  setOpenContract: Dispatch<SetStateAction<boolean>>;
+  setOpenCreateModal: Dispatch<SetStateAction<boolean>>;
+  setOpenSendTransaction: Dispatch<SetStateAction<boolean>>;
+  setOpenTokenMetaData: Dispatch<SetStateAction<boolean>>;
+}
+export const FeatureView: FC<FeatureViewProps> = ({
   setOpenAirdrop,
   setOpenContract,
   setOpenCreateModal,

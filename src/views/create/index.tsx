@@ -1,4 +1,10 @@
-import React, { FC, useCallback, useState } from "react";
+import React, {
+  FC,
+  useCallback,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import {
   Keypair,
@@ -31,7 +37,11 @@ import CreateSVG from "../../components/SVG/CreateSVG";
 import Branding from "../../components/Branding";
 import { InputView } from "../index";
 
-export const CreateView: FC = ({ setOpenCreateModal }) => {
+interface CreateViewProps {
+  setOpenCreateModal: Dispatch<SetStateAction<boolean>>;
+}
+
+export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const { networkConfiguration } = useNetworkConfiguration();

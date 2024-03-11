@@ -1,8 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
 import { GiToolbox } from "react-icons/gi";
 import { MdOutlineMoreTime } from "react-icons/md";
 import { MdOutlineDoubleArrow } from "react-icons/md";
-export const ToolView: FC = ({
+
+interface ToolViewProps {
+  setOpenAirdrop: Dispatch<SetStateAction<boolean>>;
+  setOpenContract: Dispatch<SetStateAction<boolean>>;
+  setOpenCreateModal: Dispatch<SetStateAction<boolean>>;
+  setOpenSendTransaction: Dispatch<SetStateAction<boolean>>;
+  setOpenTokenMetaData: Dispatch<SetStateAction<boolean>>;
+}
+export const ToolView: FC<ToolViewProps> = ({
   setOpenAirdrop,
   setOpenContract,
   setOpenCreateModal,
