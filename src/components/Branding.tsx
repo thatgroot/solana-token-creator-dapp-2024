@@ -17,7 +17,7 @@ const Branding: FC<BrandingProps> = ({ image, title, message }) => {
         />
 
         <div className="bg-default-950/40 absolute inset-0">
-          <div className="fles h-full items-end justify-center">
+          <div className="flex h-full items-end justify-center">
             <div className="text-start p-6">
               <h5 className="mb-3 text-xl font-bold text-white">{title}</h5>
               <p className="text-default-400 text-base font-medium">

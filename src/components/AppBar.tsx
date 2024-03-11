@@ -42,6 +42,7 @@ export const AppBar: FC = (props) => {
                 type="button"
                 data-hs-collapse="#mobileMenu"
                 data-hs-type="collapse"
+                title="Toggle Menu"
               >
                 <i data-lucide="menu" className="stroke-white">
                   <MdOutlineMenuBook />

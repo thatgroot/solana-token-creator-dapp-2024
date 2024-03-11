@@ -95,6 +95,7 @@ export const Footer: FC = () => {
                   <div className="relative">
                     <input
                       type="email"
+                      id="email"
                       className="bg-default-950/60 pe-40 ps-4 h-12 w-full rounded-lg border-white-10 py-4 text-white backdrop-blur-3xl focus:border-white/10 focus:ring-0"
                     />
 

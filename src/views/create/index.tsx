@@ -77,6 +77,11 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
         const metadataUrl = await uploadMetadata(token);
         console.log(metadataUrl);
 
+        // Ensure metadataUrl is a valid string before using it
+        if (typeof metadataUrl !== "string") {
+          throw new Error("Metadata URL is not valid");
+        }
+
         const createMetadataInstruction =
           createCreateMetadataAccountV3Instruction(
             {
@@ -270,7 +275,7 @@ export const CreateView: FC<CreateViewProps> = ({ setOpenCreateModal }) => {
                   </div>
 
                   <textarea
-                    rows="6"
+                    rows={6}
                     onChange={(e) => handleFormFieldChange("description", e)}
                     className="border-default-200 relative mt-48 block w-full rounded border-white/10 bg-transparent py-1.5 px-3 text-white/80 focus:border-white/25 focus:ring-transparent"
                     placeholder="Description of your token"
