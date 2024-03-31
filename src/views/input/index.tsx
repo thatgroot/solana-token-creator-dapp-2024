@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 interface InputViewProps {
   placeholder: string;
@@ -6,26 +6,27 @@ interface InputViewProps {
   clickhandle?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputView: FC<InputViewProps> = ({
-  placeholder,
-  name,
-  clickhandle,
+export const InputView = ({
+  className = '',
+  info = '',
+  label = '',
+  ...props
 }) => {
   return (
-    <div className="mb-4">
-      <label
-        htmlFor="input-label"
-        className="text-base/normal text-default-200 mb-2 block font-semibold"
-      >
-        {name}
-      </label>
+    <label className='flex flex-col gap-3 justify-start items-start relative rounded-xl w-full bg-transparent'>
+      {label && (
+        <p className=' text-base text-left text-white/70'>
+          {label}{' '}
+          {props.required && (
+            <span className=' text-sm font-bold text-left text-[#f00]'>*</span>
+          )}
+        </p>
+      )}
       <input
-        type="text"
-        id="input-label"
-        onChange={clickhandle}
-        placeholder={placeholder}
-        className="border-default-200  block w-full rounded border-white/10 bg-transparent py-1.5 px-3 text-white/80 focus:border-white/25 focus:ring-transparent"
+        className={`flex flex-col justify-center items-start h-14 relative px-4 rounded-xl  bg-transparent border border-white/[0.23] w-full ${className}`}
+        {...props}
       />
-    </div>
+      {info && <span className=' text-xs text-left text-white/70'>{info}</span>}
+    </label>
   );
 };
